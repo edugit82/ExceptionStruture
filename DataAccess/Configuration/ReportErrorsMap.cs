@@ -1,13 +1,14 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using ExceptionStructure.Model;
+using Model.Model;
 
-namespace ExceptionStructure.Configuration
+namespace DataAccess.Configuration
 {
     public class ReportErrorsMap : EntityTypeConfiguration<ReportErrorsModel>
     {
-        public ReportErrorsMap() : base()
+        public ReportErrorsMap()
+            : base()
         {
-            HasKey(d => new {d.Id,d.DataHora});
+            HasKey(d => new { d.Id, d.DataHora });
 
             Property(p => p.Id).HasColumnName("Id");
             Property(p => p.DataHora).HasColumnName("Data_Hora");
@@ -16,7 +17,7 @@ namespace ExceptionStructure.Configuration
             Property(p => p.StackTrace).HasColumnName("StackTrace");
 
             ToTable("dbo.Errors_Report");
-            
+
         }
     }
 }

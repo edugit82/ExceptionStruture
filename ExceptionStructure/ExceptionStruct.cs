@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using ExceptionStructure.Context;
-using ExceptionStructure.Model;
+using DataAccess.Context;
+using Model.Model;
 
 namespace ExceptionStructure
 {
@@ -14,6 +14,11 @@ namespace ExceptionStructure
         public void ExecuteWithTryVoid(Action delegado)
         {
             this.ActionZeroParameter(delegado);            
+        }
+
+        public A ExecuteWithTry<A>(A retorno, Func<A> delegado)
+        {
+            return this.FuncZeroParameter<A>(retorno, delegado);
         }
         #endregion
 

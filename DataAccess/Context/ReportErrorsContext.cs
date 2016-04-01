@@ -2,12 +2,12 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
-using ExceptionStructure.Configuration;
-using ExceptionStructure.Model;
+using DataAccess.Configuration;
+using Model.Model;
 
-namespace ExceptionStructure.Context
+namespace DataAccess.Context
 {
-    public class ReportErrorsContext : DbContext 
+    public class ReportErrorsContext : DbContext
     {
         public ReportErrorsContext()
             : base("ReportErrorsContext")
